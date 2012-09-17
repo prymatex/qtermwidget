@@ -19,6 +19,8 @@ public:
         ScrollBarLeft=1,
         ScrollBarRight=2
     };
+	int getShellPID();
+	void changeDir(const QString & dir);
 	void setTerminalFont(QFont &font);
 	void setArgs(QStringList &args);
 	void setTextCodec(QTextCodec *codec);
@@ -27,6 +29,10 @@ public:
 	void setHistorySize(int lines);
 	void setScrollBarPosition(ScrollBarPosition);
 	void sendText(QString &text);
+	static QStringList availableColorSchemes();
+public slots:
+	void copyClipboard();
+	void pasteClipboard();
 protected:
 	void resizeEvent(QResizeEvent *e);
 private:
